@@ -1,0 +1,88 @@
+{
+  "model": "TEV7 Agentic V3",
+  "date": "2026-02-26",
+  "features": 19,
+  "folds": 4,
+  "mlp_metrics": {
+    "balanced_accuracy": 0.6780252841532645,
+    "f1_danger": 0.7367755417018167,
+    "safe_recall": 0.6776858040526365,
+    "danger_recall": 0.6783647642538925,
+    "auc_roc": 0.7113974060494717
+  },
+  "xgb_metrics": {
+    "balanced_accuracy": 0.6451767908862401,
+    "f1_danger": 0.6621307140454931,
+    "safe_recall": 0.6797599678816533,
+    "danger_recall": 0.6105936138908268,
+    "auc_roc": 0.6783550600546524
+  },
+  "trivial_baseline": {
+    "f1": 0.7999925580356935,
+    "bacc": 0.5
+  },
+  "gates": {
+    "G1 (V5 Data)": true,
+    "G2 (BAcc > 0.550)": true,
+    "G3 (Safe Recall > 0.50)": true,
+    "G4 (NOT degenerate)": true,
+    "G5 (Ablation delta \u2265 2pp)": true,
+    "G6 (Reflector GO)": true,
+    "G7 (Equivalence)": true
+  },
+  "all_gates_pass": true,
+  "reflection": {
+    "deploy_model": "mlp",
+    "recommendation": "GO",
+    "issues": [],
+    "mlp_bacc": 0.6780252841532645,
+    "xgb_bacc": 0.6451767908862401
+  },
+  "ablation_results": [
+    {
+      "name": "A0_v1_subset",
+      "n_features": 13,
+      "bacc": 0.5646737505088505,
+      "f1": 0.48711545426905084
+    },
+    {
+      "name": "A1_plus_perclos",
+      "n_features": 15,
+      "bacc": 0.6279946592751424,
+      "f1": 0.6353202746241265
+    },
+    {
+      "name": "A2_full_v3",
+      "n_features": 19,
+      "bacc": 0.6421456829993449,
+      "f1": 0.6635354588885789
+    }
+  ],
+  "equivalence_test": {
+    "passed": true,
+    "n_random": 100
+  },
+  "failed_folds": {
+    "mlp": [],
+    "xgboost": []
+  },
+  "changelog_v2_to_v3": [
+    "\u03945: 21\u219219 features (Grupo 8 microsleep removed per ablation)",
+    "\u03946: XGB interactions 3\u21922 (microsleep_x_long_blink removed)",
+    "\u03947: EquivalenceTestHarness + Gate G7 (training\u2194edge parity)",
+    "\u03948: FEATURE_NAMES alias (no hardcoded number in name)"
+  ],
+  "agentic_patterns": [
+    "Prompt Chaining",
+    "Parallelization",
+    "Reflection",
+    "Tool Use",
+    "Memory Management",
+    "Exception Handling",
+    "Guardrails",
+    "Resource-Aware",
+    "Eval & Monitoring",
+    "Human-in-the-Loop",
+    "Equivalence Testing"
+  ]
+}
