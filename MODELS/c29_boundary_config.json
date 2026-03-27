@@ -1,0 +1,27 @@
+{
+    "_comment": "C29 Boundary Rules — thresholds calibrados em 87.009 frames (3 videos mineradora)",
+
+    "fps": 30,
+
+    "r1_ad_threshold": 0.5,
+    "r1_duration_sec": 30.0,
+    "r1_warmup_sec": 300.0,
+
+    "r2_ha_threshold": 0.15,
+    "r2_duration_sec": 20.0,
+    "r2_boost": 0.15,
+
+    "r3_ypr_threshold": 1.0,
+    "r3_ne_threshold": 50.0,
+    "r3_ha_min": 0.3,
+    "r3_duration_sec": 10.0,
+    "r3_boost": 0.20,
+
+    "r4_ne_threshold": 400.0,
+    "r4_ha_threshold": 0.5,
+    "r4_yaw_threshold": 20.0,
+    "r4_boost": 0.25,
+
+    "max_boost": 0.40,
+    "override_only": false
+}
